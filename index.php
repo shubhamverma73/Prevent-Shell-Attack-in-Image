@@ -79,7 +79,7 @@ generateSessionToken();
 			<div class="panel panel-default">
 				<div class="panel-heading text-center"><b>Secure Image Upload System</b></div>
 				<div class="panel-body">
-					<form enctype="multipart/form-data" action="upload.php" method="POST">
+					<form enctype="multipart/form-data" action="upload_new.php" method="POST">
 						<div class="form-group">
 							<label for="email">Choose an image to upload:</label>
 							<input name="uploaded" type="file" >
