@@ -6,7 +6,7 @@ function generateSessionToken() {
 	$_SESSION['_token'] = $data['_token'];
 }
 
-if( isset( $_POST[ 'Upload' ] ) ) { 
+/*if( isset( $_POST[ 'Upload' ] ) ) { 
 	// Check Anti-CSRF token 
     if ($_POST['_token'] === $_SESSION['_token']) {
 		// File information 
@@ -58,7 +58,7 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 	} else {
 		die("CSRF TOKEN MATCH FAILED!...");
 	}
-}
+}*/
 generateSessionToken(); 
 ?> 
 <!DOCTYPE html>
