@@ -4,7 +4,7 @@
 session_start();
 
 function generateSessionToken() {
-	$data['_token'] = md5(uniqid(rand(), true));
+	$data['_token'] 	= md5(uniqid(rand(), true));
 	$_SESSION['_token'] = $data['_token'];
 }
 
@@ -25,14 +25,10 @@ if( isset( $_POST[ 'Upload' ] ) ) {
 		$temp_file    .= DIRECTORY_SEPARATOR . md5( uniqid() . $uploaded_name ) . '.' . $uploaded_ext;
 		
 		// Is it an image? 
-		if( ( strtolower( $uploaded_ext ) == 'jpg' || strtolower( $uploaded_ext ) == 'jpeg' || strtolower( $uploaded_ext ) == 'png' ) && 
-			( $uploaded_size < 100000 ) && 
-			( $uploaded_type == 'image/jpeg' || $uploaded_type == 'image/png' ) && 
-			getimagesize( $uploaded_tmp ) ) { 
+		if( ( strtolower( $uploaded_ext ) == 'jpg' || strtolower( $uploaded_ext ) == 'jpeg' || strtolower( $uploaded_ext ) == 'png' ) && ( $uploaded_size < 100000 ) && ( $uploaded_type == 'image/jpeg' || $uploaded_type == 'image/png' ) && getimagesize( $uploaded_tmp ) ) { 
 			
 			// Strip any metadata, by re-encoding image (Note, using php-Imagick is recommended over php-GD) 
-			if( $uploaded_type == 'image/jpeg' ) { 
-							
+			if( $uploaded_type == 'image/jpeg' ) { 							
 				$img = imagecreatefromjpeg( $uploaded_tmp ); 
 				imagejpeg( $img, $temp_file, 100); 
 			} else { 
