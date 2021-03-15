@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php
 function is_valid_file($file) { 
 	$uploaded_name = $file[ 'name' ];
@@ -23,10 +24,10 @@ function is_valid_file($file) {
 			imagepng( $img, $temp_file, 9); 
 		} 
 		imagedestroy( $img ); 
-		return 'valid file';
+		return true;
 	} else { 
 		// Invalid file 
-		return '<pre>We can only accept JPEG or PNG images.</pre>'; 
+		return false; 
 	}
 }
 ?>
